@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# SVN Folder
+.svn/
+
+# Other common ignores (optional, but good practice)
+*.log
+tmp/
+*.swp
+
+REEF_DATASET/EILAT2
+REEF_DATASET/RSMAS
