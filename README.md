@@ -58,20 +58,3 @@ Di seguito sono riportati i risultati ottenuti per diverse combinazioni di featu
 **Classification Report:**
 ![Classification Report per 86 feature](images/results/86_features/classification_report.png)
 
-## Osservazioni e Conclusioni Preliminari
-
-*(In questa sezione, potresti aggiungere un riassunto delle tue osservazioni. Ad esempio, come cambiano le metriche (accuracy, precision, recall, F1-score) all'aumentare del numero di feature LBP? C'è una configurazione che sembra dare i risultati migliori? Ci sono classi particolarmente difficili da classificare?)*
-
-Esempio:
-"Dall'analisi dei risultati, si osserva che l'incremento delle feature LBP porta a [un miglioramento/peggioramento/nessun cambiamento significativo] nelle prestazioni generali del modello. La configurazione con X feature totali (Y Haralick e Z LBP con Radius=A e N_points=B) sembra offrire il miglior compromesso in termini di [specifica metrica, es. F1-score medio]."
-
-## Conclusioni
-
-In questo studio, abbiamo analizzato le prestazioni di un modello di Logistic Regression Multi-Classe con diverse configurazioni di feature. I risultati mostrano che l'aggiunta di feature LBP può migliorare le prestazioni del modello, ma è importante scegliere la configurazione giusta per ottenere i migliori risultati.
-
-## Possibili Sviluppi Futuri
-
-*(Qui potresti elencare idee per ulteriori esperimenti o miglioramenti)*
--   Testare altri algoritmi di classificazione.
--   Esplorare ulteriori variazioni dei parametri LBP o altre tecniche di estrazione feature.
--   Effettuare un'analisi più approfondita degli errori di classificazione.
