@@ -1,60 +1,37 @@
-# Analisi delle Prestazioni di Logistic Regression Multi-Classe con Diverse Configurazioni di Feature
+# Coral Classification using Supervised and Unsupervised Methods
 
-Questo repository documenta i risultati di esperimenti condotti utilizzando un modello di Logistic Regression Multi-Classe. L'obiettivo è valutare come le prestazioni del modello variano al cambiare del numero e del tipo di feature estratte, combinando feature di Haralick e Local Binary Patterns (LBP).
+## Overview 
 
-## Metodologia
+This project aims to classify coral images using both supervised and unsupervised machine learning methods. The goal is to compare the performance of these two approaches in identifying coral characteristics from images. 🐠
 
-Per l'estrazione delle feature LBP, sono stati variati i parametri `Radius` e `N_points`. Le feature di Haralick utilizzate sono 52 in tutte le configurazioni.
+## Introduction 
 
-## Risultati Sperimentali
+Corals are vital to marine biodiversity and the overall health of our oceans. An automated system for classifying corals can significantly speed up the work of ocean specialists. This project explores an unsupervised model, which has the potential to eliminate the time-consuming process of manually labeling each coral image.
 
-Di seguito sono riportati i risultati ottenuti per diverse combinazioni di feature. Per ogni configurazione, vengono mostrate la matrice di confusione e il classification report.
+## Methodology 
 
-### Configurazione 1: 62 Feature Totali
--   **Feature Haralick:** 52
--   **Feature LBP:** 10
-    -   `Radius = 1`
-    -   `N_points = 8`
+The project follows these key steps:
 
-**Matrice di Confusione:**
-![Matrice di Confusione per 62 feature](images/results/62_features/confusion_matrix.png)
+1.  **Feature Extraction**: Images are first converted from RGB to grayscale. Then, texture features are extracted using the **Gray-Level Co-occurrence Matrix (GLCM)** and **Local Binary Patterns (LBP)** algorithms. These features are then stored in a DataFrame for analysis.
 
-**Classification Report:**
-![Classification Report per 62 feature](images/results/62_features/classification_report.png)
+2.  **Visualization**: To better understand the data, **Principal Component Analysis (PCA)** is used to visualize the extracted features in a 3D space.
 
-### Configurazione 2: 70 Feature Totali
--   **Feature Haralick:** 52
--   **Feature LBP:** 18
-    -   `Radius = 2`
-    -   `N_points = 16`
+3.  **Supervised Classification**:
+    * The dataset is split into training and testing sets.
+    * A **Logistic Regression** model is trained to classify the corals.
+    * The model's performance is evaluated using metrics like **accuracy**, a **confusion matrix**, and a **classification report**.
 
-**Matrice di Confusione:**
-![Matrice di Confusione per 70 feature](images/results/70_features/confusion_matrix.png)
+4.  **Unsupervised Classification**:
+    * **K-Means clustering** is applied to group the corals into 8 distinct clusters.
+    * The performance of the clustering is assessed using metrics such as **homogeneity, completeness, V-measure, Adjusted Rand Index, and Adjusted Mutual Information Score**. A custom `purity_score` function is also implemented for evaluation.
 
-**Classification Report:**
-![Classification Report per 70 feature](images/results/70_features/classification_report.png)
+5.  **Comparison**: Finally, the accuracies of the Logistic Regression and K-Means models are compared to determine the more effective approach for this classification task.
 
-### Configurazione 3: 78 Feature Totali
--   **Feature Haralick:** 52
--   **Feature LBP:** 26
-    -   `Radius = 3`
-    -   `N_points = 24`
+## 🚀 Getting Started 
 
-**Matrice di Confusione:**
-![Matrice di Confusione per 78 feature](images/results/78_features/confusion_matrix.png)
+### Prerequisites
 
-**Classification Report:**
-![Classification Report per 78 feature](images/results/78_features/classification_report.png)
+Make sure you have Python installed on your system. You will also need to install the following libraries:
 
-### Configurazione 4: 86 Feature Totali
--   **Feature Haralick:** 52
--   **Feature LBP:** 34
-    -   `Radius = 4`
-    -   `N_points = 32`
-
-**Matrice di Confusione:**
-![Matrice di Confusione per 86 feature](images/results/86_features/confusion_matrix.png)
-
-**Classification Report:**
-![Classification Report per 86 feature](images/results/86_features/classification_report.png)
-
+```bash
+pip install opencv-python matplotlib numpy pandas seaborn scikit-image mahotas scikit-learn tqdm
