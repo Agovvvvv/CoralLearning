@@ -1,4 +1,4 @@
-# Coral Classification using Supervised and Unsupervised Methods
+# Coral Classification using Supervised Methods
 
 ## Overview 
 
@@ -21,11 +21,7 @@ The project follows these key steps:
     * A **Logistic Regression** model is trained to classify the corals.
     * The model's performance is evaluated using metrics like **accuracy**, a **confusion matrix**, and a **classification report**.
 
-4.  **Unsupervised Classification**:
-    * **K-Means clustering** is applied to group the corals into 8 distinct clusters.
-    * The performance of the clustering is assessed using metrics such as **homogeneity, completeness, V-measure, Adjusted Rand Index, and Adjusted Mutual Information Score**. A custom `purity_score` function is also implemented for evaluation.
-
-5.  **Comparison**: Finally, the accuracies of the Logistic Regression and K-Means models are compared to determine the more effective approach for this classification task.
+4.  **Comparison**: Finally, the accuracies of the Logistic Regression and K-Means models are compared to determine the more effective approach for this classification task.
 
 ## 🚀 Getting Started 
 
